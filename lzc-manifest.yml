@@ -2,6 +2,8 @@ application:
   subdomain: audio-cpp
   background_task: true
   gpu_accel: true
+  public_path:
+    - /
   upstreams:
     - location: /
       backend: http://audio:8080/
@@ -28,4 +30,4 @@ services:
 usage: |
   需要支持 Vulkan 的 GPU 和可用的 /dev/dri 设备。打开 WebUI 后，先下载或加载模型，再执行音频任务。
   模型下载到持久化目录 /app/models；请为模型和推理预留足够的磁盘、内存及显存。
-  应用使用懒猫登录保护。模型和管理状态由获授权访问此应用的用户共享。
+  应用开启公开访问，WebUI、推理 API 和模型管理接口无需懒猫登录；模型和管理状态共享。

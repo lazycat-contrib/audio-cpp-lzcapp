@@ -3,7 +3,7 @@
 [上游项目](https://github.com/0xShug0/audio.cpp)的 Vulkan WebUI 懒猫应用包，包含模型下载与管理功能，仅发布喵喵商店。
 
 - 支持 amd64，要求懒猫系统 1.5.0+、支持 Vulkan 的 GPU 及可用的 `/dev/dri`。GPU 运行效果须在目标微服验证。
-- 服务入口为 8080，保留懒猫登录鉴权；不开放匿名管理 API。
+- 服务入口为 8080，`public_path: ["/"]` 开启公开访问，WebUI、推理 API 和模型管理接口无需懒猫登录。
 - 模型目录：`/lzcapp/var/models` → `/app/models`。缓存：`/lzcapp/cache` → `/cache`。模型由应用用户共享，随应用数据管理。
 - WebUI 可下载模型、上传音频及下载生成结果，已包含懒猫文件选择器注入脚本。
 - 启用 `application.gpu_accel`，并在 `lzc-build.yml` 的 `compose_override.services.audio.devices` 显式映射 `/dev/dri:/dev/dri`。容器以 `0:0` 运行，以访问 GPU 和可写模型目录，避免写死宿主机 render/video GID；未启用 privileged。
