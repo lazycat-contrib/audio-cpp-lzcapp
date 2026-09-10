@@ -1,0 +1,18 @@
+package: community.lazycat.app.audio-cpp
+version: 2026.9.9+05f9c5d
+name: audio.cpp
+description: "An all-in-one, pure C++ inference engine for audio models, powered by ggml. Supports TTS, STT, VAD, voice conversion, music generation, and more, with highly optimized performance. No Python dependency."
+min_os_version: 1.5.0
+homepage: https://github.com/0xShug0/audio.cpp
+author: 0xShug0
+license: Apache-2.0
+locales:
+  en:
+    name: audio.cpp
+    description: "An all-in-one, pure C++ inference engine for audio models, powered by ggml. Supports TTS, STT, VAD, voice conversion, music generation, and more, with highly optimized performance. No Python dependency."
+  zh:
+    name: audio.cpp
+    description: "基于 ggml 的一体化纯 C++ 音频模型推理引擎，支持语音合成、语音识别、语音活动检测、声音转换、音乐生成等功能，提供高度优化的性能，无需 Python 依赖。"
+permissions:
+  required:
+    - net.internet

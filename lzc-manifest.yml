@@ -1,0 +1,31 @@
+application:
+  subdomain: audio-cpp
+  background_task: true
+  gpu_accel: true
+  upstreams:
+    - location: /
+      backend: http://audio:8080/
+  injects:
+    - id: open-save-chooser
+      on: browser
+      when:
+        - /*
+      do:
+        - src: file:///lzcapp/pkg/content/lazycat-injects/lzc-file-chooser-inject.js
+services:
+  audio:
+    # upstream: ghcr.io/0xshug0/audio.cpp:full-vulkan-20260909-05f9c5d
+    image: ghcr.1ms.run/0xshug0/audio.cpp:full-vulkan-20260909-05f9c5d
+    # Container root can access the injected GPU and the persistent model directory
+    # without depending on host-specific render/video group IDs.
+    user: "0:0"
+    command: server --ui --ui-management --host 0.0.0.0 --port 8080 --backend vulkan
+    environment:
+      - XDG_CACHE_HOME=/cache
+    binds:
+      - /lzcapp/var/models:/app/models
+      - /lzcapp/cache:/cache
+usage: |
+  需要支持 Vulkan 的 GPU 和可用的 /dev/dri 设备。打开 WebUI 后，先下载或加载模型，再执行音频任务。
+  模型下载到持久化目录 /app/models；请为模型和推理预留足够的磁盘、内存及显存。
+  应用使用懒猫登录保护。模型和管理状态由获授权访问此应用的用户共享。
