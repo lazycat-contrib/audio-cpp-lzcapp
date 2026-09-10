@@ -23,7 +23,7 @@ images:
     sort: created
     tag_regex: '^full-vulkan-[0-9]{8}-[0-9a-f]{7,40}$'
     version_regex: '^full-vulkan-(?P<version>[0-9]{4})(?P<month>[0-9]{2})(?P<day>[0-9]{2})-(?P<commit>[0-9a-f]{7,40})$'
-    version_template: '{version}.{month}.{day}+{commit}.lzc1'
+    version_template: '{version}.{month}.{day}+{commit}'
     delivery:
       mode: mirror
       require_digest_match: true
@@ -32,5 +32,5 @@ stores:
     enabled: false
   private:
     enabled: true
-    skip_if_version_exists: true
+    skip_if_version_exists: false
     name: audio.cpp

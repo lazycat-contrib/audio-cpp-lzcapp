@@ -19,7 +19,7 @@ lzc-cli lpk info dist/application.lpk
 
 初始镜像为 `ghcr.io/0xshug0/audio.cpp:full-vulkan-20260909-05f9c5d`，运行镜像使用 `ghcr.1ms.run` 加速源。自动检查会校验源镜像与加速源的 amd64 digest 一致。
 
-每天检查 `full-vulkan-YYYYMMDD-<commit>` 标签，按镜像创建时间选择最新构建。镜像 tag 保持原样；LPK 版本映射为 `YYYY.M.D+<commit>.lzc1`，例如 `2026.9.9+05f9c5d.lzc1`，以区分同一天的多个构建；`lzc1` 表示显式 GPU 设备映射的打包修订。禁止版本降级。手动运行 `build` 可构建、发布当前固定版本；`auto` 会检查上游。
+每天检查 `full-vulkan-YYYYMMDD-<commit>` 标签，按镜像创建时间选择最新构建。镜像 tag 保持原样；LPK 版本映射为 `YYYY.M.D+<commit>`，例如 `2026.9.9+05f9c5d`，以区分同一天的多个构建。禁止版本降级。手动运行 `build` 可构建、发布当前固定版本；`auto` 会检查上游。
 
 工作流使用 `ca-x/lazycat-github-action`，创建带版本号的 GitHub Release LPK，再发布至喵喵商店；官方商店关闭。输出在 `dist/`，不会打包进 `content/`。
 
