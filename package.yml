@@ -1,5 +1,5 @@
 package: community.lazycat.app.audio-cpp
-version: 2026.11.18+a6e3221
+version: 2026.11.19+ced4b4b
 name: audio.cpp
 description: "An all-in-one, pure C++ inference engine for audio models, powered by ggml. Supports TTS, STT, VAD, voice conversion, music generation, and more, with highly optimized performance. No Python dependency."
 min_os_version: 1.5.0
