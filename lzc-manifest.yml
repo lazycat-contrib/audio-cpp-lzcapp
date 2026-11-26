@@ -16,8 +16,8 @@ application:
         - src: file:///lzcapp/pkg/content/lazycat-injects/lzc-file-chooser-inject.js
 services:
   audio:
-    # upstream: ghcr.io/0xshug0/audio.cpp:full-vulkan-20261125-5920b65
-    image: ghcr.1ms.run/0xshug0/audio.cpp:full-vulkan-20261125-5920b65
+    # upstream: ghcr.io/0xshug0/audio.cpp:full-vulkan-20261126-dd1ad8b
+    image: ghcr.1ms.run/0xshug0/audio.cpp:full-vulkan-20261126-dd1ad8b
     # Container root can access the injected GPU and the persistent model directory
     # without depending on host-specific render/video group IDs.
     user: "0:0"
